@@ -1,0 +1,32 @@
+{
+	"name": "Node.js & PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"forwardPorts": [8288],
+	"postCreateCommand": "npm install && chmod +x .husky/* && npm run db:migrate",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"workbench.colorTheme": "Default Dark+",
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"workbench.iconTheme": "material-icon-theme",
+				"editor.fontWeight": "normal",
+				"git.autofetch": true,
+				"git.confirmSync": false,
+				"containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+				"containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+				"files.associations": {
+					"*.css": "postcss"
+				},
+				"tailwindCSS.experimental.configFile": null,
+				"makefile.configureOnOpen": true
+			},
+			"extensions": [
+				"esbenp.prettier-vscode", // The Prettier extension
+				"bradlc.vscode-tailwindcss" // Tailwind CSS IntelliSense
+			]
+		}
+	},
+	"remoteUser": "root"
+}
